@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ 
+
+<div class="posts"> 
+	{% for post in posts %}
+	<div class="post-container">
+		<div class="post-title">{{post.title}}</div>
+		<div class="post-body">{{post.body}} <span class="color-green">see more</span></div>
+		<div class='action-btns'>
+		  <i  class='fas'>&#xf075;</i> 234
+
+		</div> 
+		<div class='tags'>
+			<i class="fas fa-tag"></i>
+			python c shell
+				</div>
+	</div> 
+		 {% endfor %}
+</div> 
+
+
+{% endblock content %}
+
+
+

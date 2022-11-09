@@ -1,0 +1,118 @@
+body{
+	background: #000;
+	color: #fff;
+}
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+
+header{
+	width: 100%;
+	position: fixed;
+	background: #28282B;
+	top: 0;
+	left: 0;
+	z-index: 1;
+
+} 
+
+.head-menu{
+	width: 100%;
+	padding: 0.3em 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.hamburger{
+	width: 15%;
+	display: block;
+
+}
+
+.bar{
+  display: block;
+  width: 23px;
+  height: 3px;
+  padding: 0;
+  margin: 4px auto;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background-color: #fff;
+
+  }
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+     transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+transform: translateY(-7px) rotate(-45deg);
+} 
+
+.head-icon{
+	width: 40%;
+	text-align: center;
+
+}
+
+.head-icon h2{
+	font-size: 2em;
+	color: green;
+}
+.search-icon{
+	width: 15%;
+	text-align: center
+}
+
+.posts{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content: center;
+        margin-top: 3em;
+	padding: 0.7em;
+} 
+
+.post-container{
+	width: 95%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	border-bottom: 1px solid grey;
+	margin-top: 1em; 
+}
+
+.post-title{
+	width: 100%;
+	font-size: 1em;
+}
+
+.post-body{
+	width: 100%;
+	color: grey;
+        margin-bottom: 1em;
+	margin-top: 0.5em;
+} 
+
+.color-green{
+	color: green;
+}
+
+.action-btns{
+	color: green;
+	margin-bottom: 0.5em;
+}
+.tags{
+	color: green;
+	margin-bottom: 1em;
+}
