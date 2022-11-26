@@ -454,7 +454,7 @@ header{
 .register-login{
 	width: 90%;
 	padding: 0 1em;
-	border: 1px solid green;
+	
 	margin: 1em 0;
 	
 }
@@ -617,6 +617,8 @@ header{
 	justify-content: center;
 	align-items: center;
 	margin-top: 5em;
+	margin-bottom: 5em;
+	padding-bottom: 5em;
 }
 
 .Reg-log-page form{
@@ -886,9 +888,20 @@ footer p{
 	} 
 
 
+	
+        .post-detail{
+		width: 100%;
+	}
+
+	.post-content .post-title{
+		font-size: 1.3em;
+	}
+
+
 
 	.author-rcm{
 		width: 100%;
+		margin-top: 1em;
 		
 
 		
@@ -914,6 +927,7 @@ footer p{
 	} 
 
 	.author{
+		width: 80%;
 		margin: 0 0.5em;
 	}
 	
@@ -931,6 +945,22 @@ footer p{
 	
 	.social a{
 		margin-right: 0.3em;
+	}
+
+	.login-regpage{
+		width: 60%;
+	}
+
+	.login-page{
+		width: 45%;
+	}
+
+	.login-page p{
+		font-size: 18px;
+	}
+
+	.Reg-log-page form{
+		width: 40%;
 	}
 	
 
@@ -957,6 +987,27 @@ footer p{
 		width: 18%;
 	}
 
+	.login-page{
+		width: 55%;
+	}
+
+
+	.post-content .post-title{
+		font-size: 1.2em;
+	}
+
+}
+
+
+@media screen and (max-width: 700px)
+{
+	.login-page{
+		width: 65%;
+	}
+
+	.Reg-log-page form{
+		width: 50%;
+	}
 }
 
 
@@ -986,6 +1037,50 @@ footer p{
 	.post-title{
 		font-size: 1.1em;
 	}
+
+	
+
+	.related-post h3{
+		font-size: 1.2em;
+	}
+
+	.related-post a{
+		font-size: 16px;
+	}
+
+	.about-author img{
+		width: 50px;
+		height: 50px;
+	}
+
+	.author-name{
+		font-size: 16px;
+	}
+
+	.author{
+		width: 85%;
+		margin: 0 0.5em;
+	}
+
+
+
+	.login-page{
+		width: 75%;
+	}
+
+
+	.or-social hr{
+		width: 30%;
+		margin: 0 0.5em;
+	    }
+
+
+	    .Reg-log-page form{
+		width: 65%;
+	}
+	    
+
+	
 	
 	
 	
@@ -1002,5 +1097,16 @@ footer p{
 	.head-icon{
 		width: 25%;
 	}
+
+	.login-page{
+		width: 84%;
+	}
+
+
+	.Reg-log-page form{
+		width: 70%;
+	}
+
+	
 	
 }
