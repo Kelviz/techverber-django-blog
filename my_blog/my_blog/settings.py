@@ -11,6 +11,16 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+import django_heroku
+import cloudinary
+import cloudinary_storage
+import dj_database_url
+import dotenv
+from dotenv import load_dotenv, find_dotenv
+import environ
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +30,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-z_9ozl3xp9)lp#3-$1q5i@^d*4^rie64%#1&9d@!0_n3-r*0+p'
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['Vitechy.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -42,6 +52,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #'django.contrib.sites', 
+    'storages',
+    'cloudinary',
+    'cloudinary_storage',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -49,6 +62,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.facebook', 
     'taggit',
+    'whitenoise.runserver_nostatic',
    
         ]
 
@@ -60,6 +74,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'my_blog.urls'
@@ -162,12 +177,18 @@ CKEDITOR_CONFIGS = {
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+load_dotenv(find_dotenv())
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600, ssl_require=False) 
     }
-}
+
+#DATABASES = {
+  #  'default': {
+  #      'ENGINE': 'django.db.backends.sqlite3',
+  #      'NAME': BASE_DIR / 'db.sqlite3',
+   # }
+#}
 
 
 # Password validation
@@ -207,6 +228,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+STATIC_ROOT = BASE_DIR/"staticfiles"
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 
@@ -217,6 +239,20 @@ STATICFILES_DIRS = [
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dbrbetq4s',
+    'API_KEY': '217833219864938',
+    "API_SECRET": 'DdMmDrKft00a3yTTXASRuJV8tfA',
+}
 
 
 # Default primary key field type
@@ -242,6 +278,11 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+
+django_heroku.settings(locals())
+del DATABASES['default']['OPTIONS']['sslmode']
+
 
 
 SITE_ID = 1
