@@ -102,8 +102,8 @@ WSGI_APPLICATION = 'my_blog.wsgi.application'
 
 CKEDITOR_CONFIGS = {
     'default': {
-        'skin': 'moono',
-        #'skin': 'office2013',
+        #'skin': 'moono',
+        'skin': 'office2013',
         'toolbar_Basic': [
             ['Source', '-', 'Bold', 'Italic','Youtube',]
         ],
