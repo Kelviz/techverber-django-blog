@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+
+<div class="Reg-log-page">
+  <h2>Login</h2>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if form.errors %}
+    <p>username or password not correct</p>
+    {% endif %}
+
+    <div class="input-data"><i class="fa fa-user"></i>
+      <input placeholder="username" type="text" class="profile-form" name="username">
+    </div>
+
+    <div class="input-data">
+      <i class="fa fa-lock"></i>
+      <input placeholder="password" type="password" class="profile-form" name="password">
+    </div>
+
+    <button type="submit">Sign in</button>
+
+    <div class="forget-psd">
+      <small><a href="">forget password?</a></small>
+      <small><a href="{% url 'register' %}">sign up here...</a></small>
+    </div>
+  </form>
+
+
+</div>
+
+
+
+
+{% endblock %}

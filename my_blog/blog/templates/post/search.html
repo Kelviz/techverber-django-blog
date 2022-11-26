@@ -28,36 +28,26 @@
 		</div>
 		{% endfor %}
 
-
 		<div class="paginator">
 			{% if posts.has_previous %}
 			<div class="num"><a href="?page=1"><i class='fas fa-angle-double-left'></i></a></div>
-			<div class="num"><a href="?page={{posts.previous_page_number}}"><i class='fas fa-angle-left'></i></a></div>
+			<div class="num"><a href="?page={{posts.previous_page_number}}&search={{searched}}"><i class='fas fa-angle-left'></i></a></div>
 			{% endif %}
 		      
 			{% for num in posts.paginator.page_range %}
 			{% if posts.number == num %}
 			<div class="c-num"><a href="">{{num}}</a></div>
 			{% elif num > posts.number|add:'-3' and num < posts.number|add:'3' %}
-			<div class="num"><a href="?page={{num}}">{{num}}</a></div>
+			<div class="num"><a href="?page={{num}}&search={{searched}}">{{num}}</a></div>
 			{% endif %}
 			{% endfor %}
 			{% if posts.has_next %}
-			<div class="num"><a href="?page={{posts.next_page_number}}"><i class='fas fa-angle-right'></i></a></div>
-			<div class="num"><a href="?page={{posts.paginator.num_pages}}"><i class='fas fa-angle-double-right'></i></a></div>
+			<div class="num"><a href="?page={{posts.next_page_number}}&search={{searched}}"><i class='fas fa-angle-right'></i></a></div>
+			<div class="num"><a href="?page={{posts.paginator.num_pages}}&search={{searched}}"><i class='fas fa-angle-double-right'></i></a></div>
 			{% endif %}
 		      
 		</div>
-
-		<div class="related-post">
-			<h3>Recommended Posts</h3>
-			{% for post in recommended %}
-			<a>{{post.title}}</a>
-			{% endfor %}
-
-
-			
-		</div>
+                 
                  
 		
 
@@ -68,14 +58,13 @@
 			<div class="author">
 				<p class="author-name">Uche Ezedinma</p>
 				<p>I'm a full stack developer and i love sharing things i learn</p>
-				<div class="social">
-					<a href="">Gmail</a>
-					<a href="">Twitter</a>
-					<a href="">Github</a>
-				</div>
 			</div>
 
-			
+			<div class="social">
+				<a href="">Gmail</a>
+				<a href="">Twitter</a>
+				<a href="">Github</a>
+			</div>
 		</div>
 
 		

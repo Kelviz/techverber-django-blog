@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="posts-about">
+
+	<div class="container">
+
+
+
+		<div class="post-detail">
+
+			<div class="post-content">
+				<div class="post-title">{{post.title}}</div>
+				<div class="post-created">Last Updated: {{post.updated}}</div>
+				<img src="{{post.image.url}}">
+				<div class="post-body">{{post.body|safe}}</div>
+
+			</div>
+
+
+			<div class="like">
+				<a id="up-{{ post.pk }}">
+					{% if request.user in post.likes.all %}
+					<i id="up-text-{{ post.pk }}" class='fas fa-heart'></i>
+					{% else %}
+					<i id="up-text-{{ post.pk }}" class='far fa-heart'></i>
+					{% endif %}
+					<span class="like-l">like</span> 
+					<span id="up-place-{{ post.pk }}">{{ post.like_count}}</span>
+				</a>
+
+
+
+
+					
+			</div>
+
+
+			<div class="comments">
+				<h2>comments</h2>
+				{% for comment in comments %}
+
+				<div class="comment-container">
+
+					<div class="user">
+						<img src="/static/img/avatar.jpeg">
+						<span>{{comment.user}}</span>
+					</div>
+
+					<div class="comment-body"><p>{{comment.body|safe}}</p></div>
+
+				</div>
+				{% endfor %}
+
+
+			</div>
+
+			<div class="paginator">
+				{% if comments.has_previous %}
+				<div class="num"><a href="?page=1"><i class='fas fa-angle-double-left'></i></a></div>
+				<div class="num"><a href="?page={{comments.previous_page_number}}"><i class='fas fa-angle-left'></i></a></div>
+				{% endif %}
+			      
+				{% for num in comments.paginator.page_range %}
+				{% if comments.number == num %}
+				<div class="c-num"><a href="">{{num}}</a></div>
+				{% elif num > comments.number|add:'-3' and num < comments.number|add:'3' %}
+				<div class="num"><a href="?page={{num}}">{{num}}</a></div>
+				{% endif %}
+				{% endfor %}
+				{% if comments.has_next %}
+				<div class="num"><a href="?page={{comments.next_page_number}}"><i class='fas fa-angle-right'></i></a></div>
+				<div class="num"><a href="?page={{comments.paginator.num_pages}}"><i class='fas fa-angle-double-right'></i></a></div>
+				{% endif %}
+			      
+			</div>
+
+
+                        <div class="add-comment">
+			{% if user.is_authenticated %}
+			<form action="" enctype="multipart/form-data" method="POST">        
+			    <h3>Add Comment</h3>
+			    
+			<input type="hidden" name="post_id" >
+				 {% csrf_token %}
+				 {{ form.text|safe }}
+				 {{ form.media|safe }}
+				 {{ form.as_p }}
+				 <button type="submit">Comment</button>
+			    </form>      
+		        {% endif %}
+		        </div>
+
+
+			<div class="related-post">
+				<h3>Related Posts</h3>
+				{% for post in tags %}
+				<a>{{post.title}}</a>
+				{% endfor %}
+
+
+				
+			</div>
+
+
+
+
+
+		</div>
+		<div class="author-rcm">
+			<div class="about-author">
+				<img src="{% static '/img/vix.jpeg' %}">
+				<div class="author">
+					<p class="author-name">Uche Ezedinma</p>
+					<p>I'm a full stack developer and i love sharing things i learn</p>
+				</div>
+
+				<div class="social">
+					<a href="">Gmail</a>
+					<a href="">Twitter</a>
+					<a href="">Github</a>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+	<script>
+
+	function update(data) {
+		$("#up-place-" + data['pk']).text(data['like']);
+	
+	    }
+	
+	    $(document).ready(function () {
+		$("a[id*='up']").click(function () {
+	
+	
+	
+		    $.ajax({
+			type: "POST",
+			url: '{% url "rate-post" %}',
+	
+			data: {
+			    'pk': this.id.split("-")[1],
+			    'value': this.id.split("-")[0] === "up" ? 1 : -1,
+			    'csrfmiddlewaretoken': '{{ csrf_token }}',
+			},
+	
+	
+			success: function (data) {
+	
+			    $('#up-text-' + data['pk']).toggleClass('fas fa-heart far fa-heart');
+			    
+
+	
+	
+			    update(data);
+			},
+			dataType: 'json'
+		    });
+		});
+	    });
+</script>
+{% endblock content %}
