@@ -307,7 +307,6 @@ header{
 	width: 100%;
 	padding: 1em 0;
 
-
 }
 
 .add-comment textarea{
@@ -349,7 +348,7 @@ header{
 	display: flex;
 	align-items: center;
 	color: green;
-	margin: 1em 0;
+	margin: 0.5em 0;
 }
 
 .tags a{
@@ -966,6 +965,7 @@ footer p{
 
 	.container{
 		width: 98%;
+		padding: 0.3em 0.7em;
 	}
 	.search-icon{
 		width: 23%;
@@ -982,6 +982,12 @@ footer p{
 	.search-icon a{
 		font-size: 17px;
 	}
+
+	.post-title{
+		font-size: 1.1em;
+	}
+	
+	
 	
 }
 
