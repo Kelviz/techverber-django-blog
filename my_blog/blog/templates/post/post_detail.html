@@ -85,7 +85,6 @@
 			    
 			<input type="hidden" name="post_id" >
 				 {% csrf_token %}
-				 {{ form.text|safe }}
 				 {{ form.media|safe }}
 				 {{ form.as_p }}
 				 <button type="submit">Comment</button>

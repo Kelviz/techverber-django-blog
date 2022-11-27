@@ -46,14 +46,14 @@ class Post(models.Model):
     def like_count(self):
         return self.likes.all().count()
 
+    def num_comments(self):
+        return self.comment_set.all().count()
+
     def like(self, user):
         if user in self.likes.all():
           self.likes.remove(user)
         else:
-          self.likes.add(user)
-         
-          
-         
+          self.likes.add(user)  
         self.save
 
 

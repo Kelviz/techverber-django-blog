@@ -42,7 +42,7 @@
 					<nav>
 						{% for cat in categories %}
 				
-					         <a class="nav_item" href="{% url 'section' cat.slug %}">{{cat.name}}</a>
+					         <div class="menu-item"><a class="nav_item" href="{% url 'section' cat.slug %}">{{cat.name}}</a></div>
 				
 					         {% endfor %}
 						
@@ -56,7 +56,7 @@
 					{% endif %}
 
 					<div class="dark-mode">
-					 <span>dark mode</span> <span class="switch-d"><i class="fas fa-toggle-on"></i></span></p>
+					<span class="switch-d"><i class="fas fa-toggle-on"></i></span></p>
 					</div>
 
 					
@@ -91,12 +91,14 @@
 					{% endif %}
 				        </div>
 
-					<form action="{% url 'search' %}" method="GET" class="search-page">
-						{% csrf_token %}
-						<input placeholder="search" name="search" type="search">
-						<button><i class="fa fa-search"> </i></button>
-					</form>
+					
 				</div>
+
+				<form action="{% url 'search' %}" method="GET" class="search-page">
+					{% csrf_token %}
+					<input placeholder="search" name="search" type="search">
+					<button><i class="fa fa-search"> </i></button>
+				</form>
 
 
 
@@ -179,7 +181,10 @@
 
 
 	<footer>
-		<div class="footer-logo"><h2>Viber</h2></div>
+		<div class="footer-logo">
+			<img src="{% static '/img/Tc.png' %}">
+			<h2>Viber Tech</h2>
+		</div>
 		<div class="company">
 			
 			<div class="abt">

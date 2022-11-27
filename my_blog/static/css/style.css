@@ -35,13 +35,13 @@ header{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 50%;
+	width: 70%;
 	background: rgb(48, 47, 47);
 	color: #fff;
 	position: absolute;
 	top: 3em;
-	height: 400px;
-	padding: 0.5em;
+	height: 420px;
+	padding: 0.5em 0;
 	left: 100%;
 	-webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
@@ -56,12 +56,24 @@ header{
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+	margin: 1em 0;
+}
+
+.menu-item{
+	width: 90%;
+	border-top: 1px solid gray;
+	padding: 1em;
+}
+
+.menu-item:nth-child(5){
+	border-bottom: 1px solid gray;
+
 }
 
 .nav-menu nav a{
 	text-decoration: none;
-	color: rgb(21, 180, 21);
-	margin: 0.8em 0;
+	color: #fff;
+	
 }
 
 .mlog-out{
@@ -81,18 +93,14 @@ header{
 }
 
 .dark-mode{
-	width: 100%;
+	width: 90%;
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-top: 2em;
-	color: rgb(21, 180, 21);
+	justify-content: flex-start;
+	text-align: left;
+	padding: 1em;
+	
 }
 
-.dark-mode span{
-	width: 100%;
-	margin: 0 0.3em;
-}
 
 .dark-mode i{
 	font-size: 23px;
@@ -182,15 +190,15 @@ header{
 }
 
 .search-page{
-	width: 100%;
+	width: 40%;
 	display: none;
 	position: absolute;
-	margin-top: 6em;
+	margin-top: 90px;
 	transition: 10s all ease-in;
 }
 
-.search-icon input{
-	width: 85%;
+.search-page input{
+	width: 80%;
 	padding: 8px;
 	background: #fff;
 	color: #000;
@@ -203,8 +211,8 @@ header{
 	display: none;
 }
 
-.search-icon button{
-	width: 15%;
+.search-page button{
+	width: 10%;
 	background: #fff;
 	border-radius: 5px;
 
@@ -377,24 +385,21 @@ header{
 }
 
 .add-comment{
-	width: 97%;
-	padding: 2em 0;
-
+	width: 100%;
+	height: 70vh;
+	
 }
 
 .add-comment form{
 	display: flex;
 	flex-direction: column;
-	
+	height: 100%;
 	width: 100%;
-	padding: 1em 0;
 
 }
 
 .add-comment textarea{
 	width: 100%;
-	height: 40vh;
-	border-radius: 10px;
 }
 
 .add-comment form h3{
@@ -404,7 +409,7 @@ header{
 
 .add-comment button{
 	width: 20%;
-	margin-top: 1em;
+	margin-top: 5em;
 	padding: 8px;
 	background: rgb(77, 177, 77);
 	color: #fff;
@@ -431,6 +436,14 @@ header{
 	align-items: center;
 	color: green;
 	margin: 0.5em 0;
+}
+
+.tag-names{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+
+
 }
 
 .tags a{
@@ -863,12 +876,31 @@ header{
 
 footer{
 	width: 100%;
-	background: rgb(36, 36, 36);
+	background: #323233;
 	text-align: center;
 	color:rgb(33, 182, 33);
 	padding: 1em 0;
 	position: absolute;
 	bottom: -8em;
+
+}
+
+.footer-logo{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer-logo img{
+	width: 60px;
+	height: 40px;
+	object-fit: contain;
+	
+	
+}
+
+.footer-logo h2{
+	font-size: 18px;
 
 }
 
@@ -898,8 +930,18 @@ footer p{
 	text-decoration: none;
 	color: #fff;
 	margin: 0 0.5em;
+	font-size: 14px;
 
 }
+
+.django-ckeditor-widget{
+	width: 100%;
+	height: 50%;
+	border-radius: 30px;
+	margin-bottom: 2em;
+	
+}
+
 
 @media (max-width: 68.75em) {
 	
@@ -1115,13 +1157,30 @@ footer p{
 	.rsign{
 		display: block;
 		width: 20%;
-		padding: 1em;
+		padding: 0.7em;
 		text-align: center;
-		background: rgb(58, 57, 57);
+		background: #fff;
+		color:rgb(11, 105, 11);
+		font-weight: bold;
+		border-radius: 5px;
 		position: fixed;
 		bottom: 0.2em;
 		left: 0.2em;
 		z-index: 1;
+		cursor: pointer;
+	}
+
+	.search-page{
+		width: 70%;
+	}
+
+	.search-page button{
+		width: 12%;
+	}
+
+	.like{
+		width: 40%;
+		font-size: 18px;
 	}
 }
 
@@ -1153,6 +1212,10 @@ footer p{
 
 	.post-body{
 		font-size: 14px;
+	}
+
+	.post-content .post-body{
+		font-size: 15px;
 	}
 
 
@@ -1197,6 +1260,28 @@ footer p{
 	    .Reg-log-page form{
 		width: 65%;
 	}
+
+	.action-btns{
+		font-size: 14px;
+	}
+
+	.tags a{
+		font-size: 14px;
+
+	}
+
+	.comments h2{
+		font-size: 1.1em;
+	}
+
+	.comment-container .user span{
+		font-size: 15px;
+	}
+
+	.comment-body{
+		font-size: 14px;
+	}
+
 	    
 
 	
@@ -1224,6 +1309,11 @@ footer p{
 
 	.Reg-log-page form{
 		width: 70%;
+	}
+
+	.like{
+		width: 45%;
+		font-size: 16px;
 	}
 
 	

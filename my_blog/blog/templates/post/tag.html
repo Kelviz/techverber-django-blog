@@ -16,14 +16,15 @@
 			<div class="post-title"><a href="{% url 'content' post.id %}">{{post.title}}</a></div>
 			<div class="post-body">{{post.body|safe|truncatechars:200}}<span class="color-green"><a href="{% url 'content' post.id %}">see more</a></span></div>
 			<div class='action-btns'>
-				<i class='fas'>&#xf075;</i> 234
-
+				<i class='fas'>&#xf075;</i> <span>{{post.num_comments}}</span>
 			</div>
 			<div class='tags'>
 				<i class="fas fa-tag"></i>
+				<div class="tag-names">
 				{% for tag in post.tags.all %}
 				<a href="{% url 'tagged' tag.slug %}">{{tag.name}}</a>
 				{% endfor %}
+			        </div>
 			</div>
 		</div>
 		{% endfor %}
@@ -58,13 +59,14 @@
 			<div class="author">
 				<p class="author-name">Uche Ezedinma</p>
 				<p>I'm a full stack developer and i love sharing things i learn</p>
+				<div class="social">
+					<a href="">Gmail</a>
+					<a href="">Twitter</a>
+					<a href="">Github</a>
+				</div>
 			</div>
 
-			<div class="social">
-				<a href="">Gmail</a>
-				<a href="">Twitter</a>
-				<a href="">Github</a>
-			</div>
+			
 		</div>
 
 		
