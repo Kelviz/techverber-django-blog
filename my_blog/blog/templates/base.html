@@ -38,6 +38,29 @@
 					<div class="bar"></div>
 				</div>
 
+				<div class="nav-menu">
+					<nav>
+						{% for cat in categories %}
+				
+					         <a class="nav_item" href="{% url 'section' cat.slug %}">{{cat.name}}</a>
+				
+					         {% endfor %}
+						
+					</nav>
+
+					<div class="mlog-out">
+						{% if user.is_authenticated %}
+					         <a class="nav_item" href="{% url 'logout' %}"><span class="logout-btn">sign out</span></a>
+					        {% endif %}
+					</div>
+
+					<div class="dark-mode">
+					 <span>dark mode</span> <span class="switch-d"><i class="fas fa-toggle-on"></i></span></p>
+					</div>
+
+					
+				</div>
+
 
 				<div class="head-icon">
 					<a href="{% url 'home' %}"><img src="{% static '/img/Tc.png' %}"></a>
@@ -175,11 +198,29 @@
 		const loginPage = document.querySelector(".login-regpage");
 		const searchBtn = document.querySelector(".search-btn");
 		const searchForm = document.querySelector(".search-page");
+		const hamburger = document.querySelector(".hamburger");
+		const nav = document.querySelector(".nav-menu");
+
+                hamburger.addEventListener("click", menu)
+                function menu(){
+                hamburger.classList.toggle("active")
+                nav.classList.toggle("main-active")
+}
+
+                const navLink = document.querySelectorAll(".nav_item");
+
+                navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+                function closeMenu() { 
+
+                hamburger.classList.remove("active"); nav.classList.remove("active");
+ }
+
                 
 		loginBtn.forEach(loginBtn => {
 		loginBtn.addEventListener("click", singIn)
 		});
-		
+
 		searchBtn.addEventListener("click", search);
 
 		function singIn() {
