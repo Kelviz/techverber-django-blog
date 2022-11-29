@@ -29,7 +29,7 @@
 		</div>
 		{% endfor %}
 
-
+                {% if posts.has_next %}
 		<div class="paginator">
 			{% if posts.has_previous %}
 			<div class="num"><a href="?page=1"><i class='fas fa-angle-double-left'></i></a></div>
@@ -49,14 +49,13 @@
 			{% endif %}
 		      
 		</div>
+		{% endif %}
 
 		<div class="related-post">
 			<h3>Recommended Posts</h3>
 			{% for post in recommended %}
 			<a>{{post.title}}</a>
 			{% endfor %}
-
-
 			
 		</div>
                  
