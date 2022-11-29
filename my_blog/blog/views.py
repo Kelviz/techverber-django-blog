@@ -19,7 +19,7 @@ from .forms import CommentModelForm, SignUpForm
 def HomePage(request):
     posts = Post.objects.all()
     recommended = Post.objects.filter(recommend=True)
-    paginator = Paginator(posts, 3)
+    paginator = Paginator(posts, 8)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
 
