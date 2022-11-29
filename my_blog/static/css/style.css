@@ -319,6 +319,31 @@ header{
 
 .post-body p pre{
 	width: 100%;
+}
+
+.post-content .post-body pre{
+
+	width: 100%;
+	background: #000;
+	color: rgb(138, 233, 60);
+	margin: 0.9em 0;
+	font-size: 15px;
+	overflow: auto;
+	height: 300px;
+	scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+}
+
+
+
+.post-content .post-body pre::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
+
+.post-content .post-body code{
+	width: 100%;
 	
 
 }
@@ -1192,8 +1217,8 @@ footer p{
 
 
 	.django-ckeditor-widget{
-		width: 95%;
-		height: 400px;
+		width: 98%;
+		height: 360px;
 		border-radius: 30px;
 		margin-bottom: 2em;
 		
