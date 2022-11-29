@@ -317,7 +317,7 @@ header{
 	margin-top: 0.5em;
 } 
 
-.post-body p pre{
+.post-body p{
 	width: 100%;
 }
 
@@ -325,16 +325,15 @@ header{
 
 	width: 100%;
 	background: #000;
-	color: rgb(138, 233, 60);
+	color: rgb(167, 233, 60);
 	margin: 0.9em 0;
-	font-size: 15px;
+	font-size: 14px;
 	overflow: auto;
 	height: 300px;
 	scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none;  /* Internet Explorer 10+ */
 
 }
-
 
 
 .post-content .post-body pre::-webkit-scrollbar { /* WebKit */
@@ -347,6 +346,31 @@ header{
 	
 
 }
+
+.comment-body pre{
+	width: 100%;
+	background: #000;
+	color: rgb(167, 233, 60);
+	margin: 0.9em 0;
+	font-size: 14px;
+	overflow: auto;
+	height: 300px;
+	scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+}
+
+
+.comment-body pre::-webkit-scrollbar { /* WebKit */
+	width: 0;
+	height: 0;
+    }
+    
+.comment-body pre code{
+	    width: 100%;
+	    
+    
+    }
 
 .like{
 	width: 30%;
@@ -963,6 +987,7 @@ footer p{
 	height: 50%;
 	border-radius: 30px;
 	margin-bottom: 2em;
+	padding: 0.7em 0;
 	
 }
 
@@ -1218,7 +1243,7 @@ footer p{
 
 	.django-ckeditor-widget{
 		width: 98%;
-		height: 360px;
+		height: 300px;
 		border-radius: 30px;
 		margin-bottom: 2em;
 		
@@ -1231,7 +1256,7 @@ footer p{
 {
 
 	.container{
-		width: 98%;
+		width: 96%;
 		padding: 0.3em 0.7em;
 	}
 	.search-icon{
