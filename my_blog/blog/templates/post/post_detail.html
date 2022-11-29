@@ -77,9 +77,9 @@
 			      
 			</div>
 
-
+                        {% if user.is_authenticated %}
                         <div class="add-comment">
-			{% if user.is_authenticated %}
+			
 			<form action="" enctype="multipart/form-data" method="POST">        
 			    <h3>Add Comment</h3>
 			    
@@ -89,8 +89,9 @@
 				 {{ form.as_p }}
 				 <button type="submit">Comment</button>
 			    </form>      
-		        {% endif %}
+		        
 		        </div>
+			{% endif %}
 
 
 			<div class="related-post">
