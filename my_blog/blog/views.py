@@ -1,3 +1,4 @@
+from asyncio import all_tasks
 from audioop import reverse
 import imp
 from multiprocessing import context
@@ -19,11 +20,12 @@ from .forms import CommentModelForm, SignUpForm
 def HomePage(request):
     posts = Post.objects.all()
     recommended = Post.objects.filter(recommend=True)
+    all_tags = Tag.objects.all()
     paginator = Paginator(posts, 8)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
 
-    return render(request, "post/home.html", {'posts':posts, 'recommended':recommended})
+    return render(request, "post/home.html", {'posts':posts, 'recommended':recommended, 'all_tags':all_tags})
 
 
 def PostDetail(request, id):

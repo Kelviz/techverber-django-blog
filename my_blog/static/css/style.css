@@ -991,6 +991,99 @@ footer p{
 	
 }
 
+.all-tags{
+	width: 97%;
+	text-align: center;
+	display: block;
+	margin: 1em auto;
+}
+
+.tag-container{
+	width: 95%;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	background:rgb(29, 28, 28);
+	
+
+}
+
+.all-tags a{
+	width: auto;
+	color:rgb(11, 105, 11);
+	margin: 0.5em;
+	text-decoration: none;
+	
+}
+
+
+.all-tags h3{
+	margin-bottom: 1em;
+}
+
+.rsign{
+	display: none;
+}
+
+
+.password-reset{
+	width: 30%;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 10em auto;
+	padding: 5em 0.5em;
+	color: #000;
+}
+
+.password-reset h2{
+	margin-bottom: 1em;
+	color: rgb(11, 105, 11);
+}
+
+.f-intruct{
+	width: 100%;
+	font-size: 14px;
+	padding: 0.5em;
+	margin-bottom: 1em;
+}
+
+.password-reset form{
+
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.password-reset input{
+	padding: 13px 3px;
+	width: 80%;
+	border-radius: 5px;
+	border: 1px solid rgb(223, 220, 220);
+	background: rgb(233, 232, 232);
+}
+
+
+.password-reset button{
+	margin-top: 0.8em;
+	background:rgb(11, 105, 11);
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+	font-weight: bold;
+	width: auto;
+	padding: 12px;
+	border: none;
+	border-radius: 6px;
+}
+
+
+
 
 @media (max-width: 68.75em) {
 	

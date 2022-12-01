@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+
+<section class="create-post-page">
+    <div class="register-login-page">
+        <h2>Create Account</h2>
+		<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">submit</button>
+        </form>   
+    </div>
+    </section>
+
+
+{% endblock %}

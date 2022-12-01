@@ -50,12 +50,14 @@
 		      
 		</div>
 		{% endif %}
-
-		<div class="related-post">
-			<h3>Recommended Posts</h3>
-			{% for post in recommended %}
-			<a>{{post.title}}</a>
+                
+		<div class="all-tags">
+			<h3>Tags</h3>
+		<div class="tag-container">
+			{% for tag in all_tags %}
+			<a href="{% url 'tagged' tag.slug %}">#{{tag.name}}</a>
 			{% endfor %}
+		</div>
 			
 		</div>
                  
