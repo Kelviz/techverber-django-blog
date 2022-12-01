@@ -1,10 +1,27 @@
-body{
-	background: rgb(26, 25, 25);
-	color: #fff;
+:root{
+
+	--bg-white: rgb(26, 25, 25);
+	--text-white: #fff;
+	--bg-container: #323233;
+	--border-gray: gray;
+
+}
+
+body{   
+	
+	background: var(--bg-white);
+	color: var(--text-white);
 	position: relative;
 	min-height: 100%;
 	font-family: 'Roboto', sans-serif;
 	letter-spacing: 1px;
+}
+
+.dark {
+	--bg-white: #fff;
+	--bg-container: rgb(250, 250, 250);
+	--text-white: #000;
+
 }
 
 .container{
@@ -24,7 +41,7 @@ header{
 	justify-content: center;
 	align-items: center;
 	position: fixed;
-	background: #323233;
+	background: var(--bg-container);
 	top: 0;
 	left: 0;
 	z-index: 1;
@@ -36,8 +53,8 @@ header{
 	flex-direction: column;
 	align-items: center;
 	width: 70%;
-	background: rgb(48, 47, 47);
-	color: #fff;
+	background: var(--bg-container);
+	color: var(--text-white);
 	position: absolute;
 	top: 3em;
 	height: 420px;
@@ -61,24 +78,24 @@ header{
 
 .menu-item{
 	width: 90%;
-	border-top: 1px solid gray;
+	border-top: 1px solid var(--border-gray);
 	padding: 1em;
 }
 
 .menu-item:nth-child(5){
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid var(--border-gray);
 
 }
 
 .nav-menu nav a{
 	text-decoration: none;
-	color: #fff;
+	color: var(--text-white);
 	
 }
 
 .mlog-out{
 	width: 80%;
-	background: #fff;
+	background: var(--text-white);
 	color: rgb(21, 180, 21);
 	border-radius: 5px;
 	padding: 0.5em 0;
@@ -101,10 +118,14 @@ header{
 	
 }
 
+.b-toggle{
+	border: 1px solid red;
+}
+
 
 .dark-mode i{
 	font-size: 23px;
-	color: #fff;
+	color: var(--text-white);
 }
 
 
@@ -130,7 +151,7 @@ header{
 }
 
 .big-screen-nav a{
-	color: #fff;
+	color: var(--text-white);
 	margin-right: 0.8em;
 	text-decoration: none;
 	font-size: 1em;
@@ -186,7 +207,7 @@ header{
 	text-decoration: none;
 	font-size: 20px;
 	margin-left: 0.8em;
-	color: #fff;
+	color: var(--text-white);
 }
 
 .search-page{
@@ -200,8 +221,8 @@ header{
 .search-page input{
 	width: 80%;
 	padding: 8px;
-	background: #fff;
-	color: #000;
+	background: var(--bg-white);
+	color: var(--text-white);
 	border-radius: 5px;
 	margin-right: 0.3em;
 
@@ -213,7 +234,7 @@ header{
 
 .search-page button{
 	width: 10%;
-	background: #fff;
+	background: var(--bg-white);;
 	border-radius: 5px;
 
 }
@@ -284,7 +305,7 @@ header{
 }
 
 .post-content .post-body{
-	color: #fff;
+	color: var(--text-white);
 	margin-top: 0.5em;
 	text-align: justify;
 	font-size: 18px;
@@ -307,12 +328,12 @@ header{
 
 .post-title a{
 	text-decoration: none;
-	color: #fff;
+	color: var(--text-white);
 }
 
 .post-body{
 	width: 100%;
-	color: grey;
+	color: var(--border-gray);
         margin-bottom: 1em;
 	margin-top: 0.5em;
 } 
@@ -524,14 +545,14 @@ header{
 } 
 
 .author{
-	color: rgb(250, 250, 219);
+	color: var(--text-white);
 }
 
 .author-name{
 	text-align: center;
 	font-weight: bold;
 	font-size: 18px;
-	color: #fff;
+	color: var(--text-white);
 }
 
 .social {
@@ -568,7 +589,7 @@ header{
 	top: 3.5em;
 	width: 35%;
 	border: 10px solid rgb(201, 199, 199);
-	background: #fff;
+	background: rgb(212, 209, 209);
 	margin: auto;
 	color: #000;
 }
@@ -670,7 +691,7 @@ header{
 }
 
 .forget-p a{
-	color: gray;
+	color: darkgreen;
 	text-decoration: none;
 	font-size: 15px;
 }
@@ -857,15 +878,15 @@ header{
 	width: 40px;
 	margin: 0 0.3em;
 	
-	background:rgb(66, 66, 66);
+	background: var(--bg-container);
 	color: white;
 	text-align: center;
 }
 
+
 .c-num{
 	width: 40px;
 	margin: 0 0.3em;
-	
 	background:rgb(11, 105, 11);
 	color: white;
 	text-align: center;
@@ -874,7 +895,7 @@ header{
 
 .num a {
 	text-decoration: none;
-	color: #fff;
+	color: var(--text-white);
 	width: 100%;
 	display: flex;
 	text-align: center;
@@ -917,14 +938,14 @@ header{
 
 .related-post a{
 	margin-bottom: 1em;
-	color:rgb(209, 207, 207);
+	color:var(--text-white);;
 	text-decoration: none;
 	font-size: 18px;
 }
 
 footer{
 	width: 100%;
-	background: #323233;
+	background: var(--bg-container);
 	text-align: center;
 	color:rgb(33, 182, 33);
 	padding: 1em 0;
@@ -1003,7 +1024,7 @@ footer p{
 	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
-	background:rgb(29, 28, 28);
+	background: var(--bg-container);
 	
 
 }
@@ -1028,7 +1049,7 @@ footer p{
 
 .password-reset{
 	width: 30%;
-	background: #fff;
+	background: rgb(219, 214, 214);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -1066,6 +1087,7 @@ footer p{
 	border-radius: 5px;
 	border: 1px solid rgb(223, 220, 220);
 	background: rgb(233, 232, 232);
+	margin: 0.5em 0;
 }
 
 

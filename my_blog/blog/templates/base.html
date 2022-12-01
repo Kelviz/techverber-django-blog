@@ -55,8 +55,8 @@
 					</div>
 					{% endif %}
 
-					<div class="dark-mode">
-					<span class="switch-d"><i class="fas fa-toggle-on"></i></span></p>
+					<div class="dark-mode bg-toggle">
+					<span class="switch-d "><i class="fas fa-toggle-on"></i></span>
 					</div>
 
 					
@@ -192,6 +192,23 @@
 	</footer>
 
 	<script>
+
+const toggle = document.querySelector(".bg-toggle");
+  const theme = window.localStorage.getItem("theme");
+  if (theme === "dark") document.body.classList.add("dark");
+
+
+  toggle.addEventListener("click", () => {
+	console.log("clicked")
+   document.body.classList.toggle("dark");
+   if (theme === "dark") {
+     window.localStorage.setItem("theme", "light");
+   } else window.localStorage.setItem("theme", "dark");
+});
+
+
+
+
 		const loginBtn = document.querySelectorAll(".login-btn");
 		const loginPage = document.querySelector(".login-regpage");
 		const searchBtn = document.querySelector(".search-btn");
@@ -262,6 +279,19 @@ function show(elementID) {
 
     })
   }
+
+  
+
+  function changeColor(color) {
+            document.body.style.background = color;
+        }
+
+  function gfg_Run() {
+            changeColor('yellow');
+            el_down.innerHTML = "Background Color changed";
+        }   
+
+
 	</script>
 </body>
 
