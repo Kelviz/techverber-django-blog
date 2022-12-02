@@ -19,8 +19,9 @@ body{
 
 .dark {
 	--bg-white: #fff;
-	--bg-container: rgb(250, 250, 250);
+	--bg-container: rgb(209, 208, 208);
 	--text-white: #000;
+	--border-gray: rgb(209, 205, 205);
 
 }
 
@@ -284,7 +285,7 @@ header{
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-	border-bottom: 1px solid rgb(58, 58, 58);
+	border-bottom: 1px solid var(--border-gray);
 	margin-top: 1em; 
 	
 }
@@ -333,7 +334,7 @@ header{
 
 .post-body{
 	width: 100%;
-	color: var(--border-gray);
+	color: gray;
         margin-bottom: 1em;
 	margin-top: 0.5em;
 } 
@@ -421,7 +422,7 @@ header{
 }
 
 .comments h2{
-	border-bottom: 1px solid rgb(66, 66, 66);
+	border-bottom: 1px solid var(--border-gray);
 }
 
 .comment-container{
@@ -430,7 +431,7 @@ header{
 	flex-direction: column;
 	justify-content: flex-start;
 	margin: 0.5em 0;
-	border-bottom: 1px solid rgb(66, 66, 66);
+	border-bottom: 1px solid var(--border-gray);
 }
 
 .comment-container .user{
@@ -589,14 +590,14 @@ header{
 	top: 3.5em;
 	width: 35%;
 	border: 10px solid rgb(201, 199, 199);
-	background: rgb(212, 209, 209);
+	background: var(--text-white);
 	margin: auto;
-	color: #000;
+	color: var(--bg-white);
 }
 
 .login-page p{
 	font-size: 22px;
-	color: rgb(26, 25, 25);
+	color: var(--bg-white);
 	font-weight: bold;
 	margin-top: 0.3em;
 
@@ -616,7 +617,7 @@ header{
 	font-size: 19px;
 	font-weight: bold;
 	text-align: center;
-	color: rgb(48, 47, 47);
+	color: var(--bg-white);
 	cursor: pointer;
 }
 
@@ -1143,6 +1144,7 @@ footer p{
 		width: 14%;
 		display: block;
 		text-align: left;
+		cursor: pointer;
 		
 	}
 
@@ -1339,7 +1341,7 @@ footer p{
 		width: 20%;
 		padding: 0.7em;
 		text-align: center;
-		background: #fff;
+		background: rgb(230, 230, 230);
 		color:rgb(11, 105, 11);
 		font-weight: bold;
 		border-radius: 5px;
