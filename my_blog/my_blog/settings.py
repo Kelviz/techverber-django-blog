@@ -35,7 +35,9 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['vibertech.herokuapp.com', '127.0.0.1']
+# ALLOWED_HOSTS = ['vibertech.herokuapp.com', '127.0.0.1']
+
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -173,12 +175,14 @@ CKEDITOR_CONFIGS = {
   #  'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600, ssl_require=False) 
   #  }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+DATABASES = {}
 
 
 # Password validation
@@ -218,13 +222,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_ROOT = BASE_DIR/"staticfiles"
+
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+#STATIC_ROOT = BASE_DIR/"staticfiles"
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 
-STATICFILES_DIRS = [
-   BASE_DIR/'static'
-]
+#STATICFILES_DIRS = [
+   #BASE_DIR/'static'
+#]
 
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
