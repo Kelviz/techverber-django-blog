@@ -15,7 +15,7 @@ import os
 #import django_heroku
 import cloudinary
 import cloudinary_storage
-import dj_database_url
+#import dj_database_url
 import dotenv
 from dotenv import load_dotenv, find_dotenv
 import environ
