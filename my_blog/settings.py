@@ -138,17 +138,29 @@ CKEDITOR_CONFIGS ={
 # }
 
 
+#DATABASES = {
+   # 'default': {
+     #   'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #    'HOST': str(os.getenv('DB_HOST')),
+     #   'NAME': str(os.getenv('DB_NAME')),
+     #   'USER': str(os.getenv('DE_USER')),
+     #   'PASSWORD': str(os.getenv('DB_PASSWORD')),
+      #  'PORT': os.getenv('DB_PORT'),
+
+    #}
+
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': str(os.getenv('DB_HOST')),
-        'NAME': str(os.getenv('DB_NAME')),
-        'USER': str(os.getenv('DE_USER')),
-        'PASSWORD': str(os.getenv('DB_PASSWORD')),
-        'PORT': os.getenv('DB_PORT'),
+        'ENGINE': "django.db.backends.postgresql_psycopg2",
+        'HOST': "db.asycoshlaihmfiiqdvck.supabase.co",
+        'NAME': "postgres",
+        'USER': "postgres",
+        'PASSWORD': "vixbuz676049",
+        'PORT': "5432",
 
     }
-
 }
 
 # Password validation
