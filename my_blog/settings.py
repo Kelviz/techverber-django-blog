@@ -187,7 +187,7 @@ DATABASES = {
     'default': {
         'ENGINE': "django.db.backends.postgresql_psycopg2",
         'HOST': "db.asycoshlaihmfiiqdvck.supabase.co",
-        'NAME': "verbertech",
+        'NAME': "postgres",
         'USER': "postgres",
         'PASSWORD': "vixbuz676049",
         'PORT': "5432",
