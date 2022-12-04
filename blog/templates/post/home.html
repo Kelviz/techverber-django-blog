@@ -51,6 +51,7 @@
 		</div>
 		{% endif %}
                 
+		{% if all_tags %}
 		<div class="all-tags">
 			<h3>Tags</h3>
 		<div class="tag-container">
@@ -60,6 +61,7 @@
 		</div>
 			
 		</div>
+		{% endif %}
                  
 		
 
@@ -69,11 +71,14 @@
 			<img src="{% static '/img/vix.jpeg' %}">
 			<div class="author">
 				<p class="author-name">Uche Ezedinma</p>
-				<p>I'm a full stack developer and i love sharing things i learn</p>
+				<p>I'm a full stack developer and i created this <span style="font-weight: bold;">Tech Blog</span> 
+				to share the things i've learned and also to help me remember the things i've learned in the past,
+				 so my future self doesn't have to re-learn them in the future.</p>
 				<div class="social">
-					<a href="">Gmail</a>
-					<a href="">Twitter</a>
-					<a href="">Github</a>
+					<a href="" class="sg-red"><i class='fab fa-google'></i></a>
+					<a href="" class="st-red"><i class='fab fa-twitter'></i></a>
+					<a href="" class="sg-red"><i class='fab fa-github'></i></a>
+					<a href="" class="sg-red"><i class='fab fa-linkedin-in'></i></a>
 				</div>
 			</div>
 

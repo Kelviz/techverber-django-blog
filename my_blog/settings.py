@@ -37,7 +37,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = ['vibertech.herokuapp.com', '127.0.0.1']
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -102,67 +102,22 @@ WSGI_APPLICATION = 'my_blog.wsgi.application'
 
 
 
-CKEDITOR_CONFIGS = {
-    'default': {
-        'skin': 'moono',
-        #'skin': 'office2013',
-        'toolbar_Basic': [
-            ['Source', '-', 'Bold', 'Italic','Youtube',]
-        ],
-        'toolbar_YourCustomToolbarConfig': [
+CKEDITOR_CONFIGS ={
+    'default':{
+       'toolbar': 'full',
+        'codeSnippet_theme': 'railscasts',
+        'extraPlugins': ','.join(
+            [
+                'codesnippet','dialog', 'autolink','html5video'
 
-            {'name': 'clipboard', 'items': ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
-        
-            {'name': 'paragraph',
-             'items': ['NumberedList', 'BulletedList','Blockquote', 'CreateDiv', '-',
-                       'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock',
-                       'Language']},
-            {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
-            {'name': 'insert',
-             'items': ['Image',  'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe']},
-            {'name': 'colors', 'items': ['TextColor', 'BGColor']},
-            
 
-            '/',  # put this to force next toolbar on new line
-            {'name': 'yourcustomtools', 'items': [
-                # put the name of your editor.ui.addButton here
-              
-                'Maximize',
-                'CodeSnippet',
-                'Mathjax',
-             
-                'Uicolor',
-        
-                
-            ]},
-        ],
-        'toolbar': 'YourCustomToolbarConfig',  # put selected toolbar config here
-         'mathJaxLib': '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML',
-
-        'tabSpaces': 4,
-        'extraPlugins': ','.join([
-            'uploadimage', # the upload image feature
-            # your extra plugins here
-            'div',
-           
-            'devtools',
-            'widget',
-            'clipboard',
-            'dialog',
-            'dialogui',
-            'elementspath',
-            'codesnippet',
-            'uicolor',
-    
-           
-        ]),
-
-        'height': '80%',
-        'width': '100%',
-        'toolbarCanCollapse': True,
-    },
-    
+            ]),
+    }
 }
+
+
+        
+    
 
 
 
@@ -185,14 +140,15 @@ CKEDITOR_CONFIGS = {
 
 DATABASES = {
     'default': {
-        'ENGINE': "django.db.backends.postgresql_psycopg2",
-        'HOST': "db.asycoshlaihmfiiqdvck.supabase.co",
-        'NAME': "postgres",
-        'USER': "postgres",
-        'PASSWORD': "vixbuz676049",
-        'PORT': "5432",
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': str(os.getenv('DB_HOST')),
+        'NAME': str(os.getenv('DB_NAME')),
+        'USER': str(os.getenv('DE_USER')),
+        'PASSWORD': str(os.getenv('DB_PASSWORD')),
+        'PORT': os.getenv('DB_PORT'),
 
     }
+
 }
 
 # Password validation
@@ -240,7 +196,7 @@ STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 
 #STATICFILES_DIRS = [
-   #BASE_DIR/'static'
+#   BASE_DIR/'static'
 #]
 
 
@@ -250,15 +206,13 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-
-
-#DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dbrbetq4s',
-    'API_KEY': '217833219864938',
-    "API_SECRET": 'DdMmDrKft00a3yTTXASRuJV8tfA',
+    'CLOUD_NAME': str(os.getenv('CLOUD_NAME')),
+    'API_KEY': str(os.getenv('CLOUD_API_KEY')),
+    "API_SECRET": str(os.getenv('CLOUD_API_SECRET')),
 }
 
 
@@ -291,8 +245,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'vitalisezedinma23@gmail.com'
-EMAIL_HOST_PASSWORD = 'vbub brex dfxa bcgm'
+EMAIL_HOST_USER = str(os.getenv('EMAIL_USER'))
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
 DEFAULT_FROM_EMAIL = 'Viber Tech <no-reply@Viber-Tech.com>'
 
 

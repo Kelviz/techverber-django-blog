@@ -15,6 +15,9 @@ body{
 	min-height: 100%;
 	font-family: 'Roboto', sans-serif;
 	letter-spacing: 1px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 .dark {
@@ -196,7 +199,6 @@ header{
 	text-align: right;
 	position: relative;
 	
-	
 }
 
 .search-icon i {
@@ -209,6 +211,10 @@ header{
 	font-size: 20px;
 	margin-left: 0.8em;
 	color: var(--text-white);
+}
+
+.search-icon span{
+	margin-left: 1em;
 }
 
 .search-page{
@@ -346,8 +352,6 @@ header{
 .post-content .post-body pre{
 
 	width: 100%;
-	background: #000;
-	color: rgb(167, 233, 60);
 	margin: 0.9em 0;
 	font-size: 14px;
 	overflow: auto;
@@ -365,9 +369,19 @@ header{
 
 .post-content .post-body code{
 	width: 100%;
+	overflow: auto;
+	scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
 	
 
 }
+
+
+
+.post-content .post-body code::-webkit-scrollbar { /* WebKit */
+	width: 0;
+	height: 0;
+    }
 
 .comment-body pre{
 	width: 100%;
@@ -547,24 +561,28 @@ header{
 
 .author{
 	color: var(--text-white);
+	text-align: justify;
 }
 
 .author-name{
 	text-align: center;
 	font-weight: bold;
 	font-size: 18px;
+	margin-bottom: 0.7em;
 	color: var(--text-white);
 }
 
 .social {
 	display: flex;
+	justify-content: center;
 	margin-top: 1em;
 }
 
 .social a{
 	text-decoration: none;
-	color: green;
-	margin: 0.3em;
+	color: rgb(144, 209, 46);
+	margin: 0.5em;
+	font-size: 25px;
 }
 
 .login-regpage{
@@ -949,9 +967,7 @@ footer{
 	background: var(--bg-container);
 	text-align: center;
 	color:rgb(33, 182, 33);
-	padding: 1em 0;
-	position: absolute;
-	bottom: -8em;
+	margin-top: auto;
 
 }
 

@@ -61,5 +61,5 @@ class Post(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete= models.CASCADE)
     user = models.ForeignKey(User, on_delete = models.CASCADE)
-    body = RichTextUploadingField()
+    body = models.TextField()
     created = models.DateTimeField(auto_now_add = True)
