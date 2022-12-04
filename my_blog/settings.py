@@ -252,7 +252,7 @@ DEFAULT_FROM_EMAIL = 'Viber Tech <no-reply@Viber-Tech.com>'
 
 
 #django_heroku.settings(locals())
-#del DATABASES['default']['OPTIONS']['sslmode']
+#del DATABASES['default']['OPTIONS']['sslmoode']
 
 
 
