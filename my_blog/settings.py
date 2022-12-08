@@ -140,11 +140,11 @@ CKEDITOR_CONFIGS ={
 DATABASES = {
     'default': {
         'ENGINE': os.getenv('HOST_ENGINE'),
-        'HOST': os.environ['DB_HOST'],
-        'NAME': os.environ['DB_NAME'],
-        'USER': os.environ['DE_USER'],
-        'PASSWORD': os.environ['DB_PASSWORD'],
-        'PORT': os.environ['DB_PORT'],
+        'HOST': os.getenv('DB_HOST'),
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DE_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'PORT': os.getenv('DB_PORT'),
 
     }
 
@@ -211,9 +211,9 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ['CLOUD_NAME'],
-    'API_KEY': os.environ['CLOUD_API_KEY'],
-    "API_SECRET": os.environ['CLOUD_API_SECRET'],
+    'CLOUD_NAME': os.getenv('CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUD_API_KEY'),
+    "API_SECRET": os.getenv('CLOUD_API_SECRET'),
 }
 
 
@@ -246,8 +246,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ['EMAIL_USER']
-EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASSWORD']
+EMAIL_HOST_USER = os.getenv('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
 DEFAULT_FROM_EMAIL = 'Viber Tech <no-reply@Viber-Tech.com>'
 
 
