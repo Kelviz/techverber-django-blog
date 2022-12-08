@@ -123,7 +123,7 @@ CKEDITOR_CONFIGS ={
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-#load_dotenv(find_dotenv())
+
 
 #DATABASES = {
   #  'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600, ssl_require=False) 
