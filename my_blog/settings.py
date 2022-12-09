@@ -129,26 +129,26 @@ CKEDITOR_CONFIGS ={
   #  'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600, ssl_require=False) 
   #  }
 
-DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.sqlite3',
-         'NAME': BASE_DIR / 'db.sqlite3',
-     }
- }
-
-
 #DATABASES = {
-#    'default': {
-#        'ENGINE': os.getenv('HOST_ENGINE'),
- #       'HOST': os.getenv('DB_HOST'),
- #       'NAME': os.getenv('DB_NAME'),
- #       'USER': os.getenv('DE_USER'),
- #       'PASSWORD': os.getenv('DB_PASSWORD'),
- #       'PORT': os.getenv('DB_PORT'),
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+ #}
 
-  #  }
 
-#}
+DATABASES = {
+  'default': {
+        'ENGINE': os.getenv('HOST_ENGINE'),
+        'HOST': os.getenv('DB_HOST'),
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DE_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'PORT': os.getenv('DB_PORT'),
+
+    }
+
+}
 
 
 
@@ -207,7 +207,7 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-#DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 CLOUDINARY_STORAGE = {
