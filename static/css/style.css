@@ -94,17 +94,18 @@ header{
 .nav-menu nav a{
 	text-decoration: none;
 	color: var(--text-white);
+	font-weight: bold;
 	
 }
 
 .mlog-out{
 	width: 80%;
-	background: var(--text-white);
+	background: #fff;
 	color: rgb(21, 180, 21);
 	border-radius: 5px;
 	padding: 0.5em 0;
 	text-align: center;
-	margin-top: 2em;
+	margin-top: 1em;
 }
 
 .mlog-out a{
@@ -159,6 +160,7 @@ header{
 	margin-right: 0.8em;
 	text-decoration: none;
 	font-size: 1em;
+	font-weight: bold;
 }
 
 .hamburger{
@@ -253,8 +255,8 @@ header{
 	justify-content: center;
 	align-items: center;
 	margin-top: 3em;
-	margin-bottom: 8em;
-	padding-bottom: 5em;
+	margin-bottom: 2em;
+	padding-bottom: 1em;
 }
 
 .posts-about .container{
@@ -340,7 +342,7 @@ header{
 
 .post-body{
 	width: 100%;
-	color: gray;
+	color: var(--text-white);
         margin-bottom: 1em;
 	margin-top: 0.5em;
 } 
@@ -414,7 +416,7 @@ header{
 	border-radius: 8px;
 	display: flex;
 	justify-content: center;
-	padding: 1em;
+	padding: 0.8em;
 	font-size: 20px;
 	font-weight: bold;
 	margin: 1em 0;
@@ -493,7 +495,7 @@ header{
 
 .add-comment button{
 	width: 20%;
-	margin-top: 5em;
+	margin-top: 2em;
 	padding: 8px;
 	background: rgb(77, 177, 77);
 	color: #fff;
@@ -968,6 +970,7 @@ footer{
 	text-align: center;
 	color:rgb(33, 182, 33);
 	margin-top: auto;
+	padding: 1em 0;
 
 }
 
@@ -1033,7 +1036,7 @@ footer p{
 	width: 97%;
 	text-align: center;
 	display: block;
-	margin: 1em auto;
+	margin: 0.6em auto;
 }
 
 .tag-container{
@@ -1224,9 +1227,6 @@ footer p{
 		width: 100%;
 		margin-top: 1em;
 		
-
-		
-		
 	}
 	
 	.about-author{
@@ -1328,7 +1328,7 @@ footer p{
 	}
 
 	.add-comment button{
-		margin-top: 4em;
+		margin-top: 1em;
 	}
 
 	.password-reset{
@@ -1497,7 +1497,7 @@ footer p{
 
 
 	.add-comment button{
-		margin-top: 5em;
+		margin-top: 1em;
 	}
 
 	.password-reset{
@@ -1512,7 +1512,7 @@ footer p{
 @media screen and (max-width: 500px)
 {
 	.add-comment button{
-		margin-top: 6em;
+		margin-top: 1em;
 	}
 
 	.add-comment form h3{
@@ -1553,7 +1553,7 @@ footer p{
 	}
 
 	.add-comment button{
-		margin-top: 7em;
+		
 		width: 25%;
 		font-size: 14px;
 	}
@@ -1573,10 +1573,7 @@ footer p{
 
 @media screen and (max-width: 370px)
 {
-	.add-comment button{
-		margin-top: 8em;
-		
-	}
+	
 
 	.password-reset{
 		width: 80%;
